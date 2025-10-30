@@ -54,21 +54,21 @@ Deve restituire Maven 3.6.0 o superiore.
 INSTALLAZIONE POSTGRESQL
 -------------------------
 1. Scaricare e installare PostgreSQL da: https://www.postgresql.org/download/
-2. Durante l'installazione, annotare username, password e porta (default 5432)
+2. Durante l'installazione, annotare username, password e porta (default 6028)
 3. Avviare il servizio PostgreSQL
 
 CONFIGURAZIONE DATABASE
 -----------------------
 1. Creare un database per l'applicazione:
-    createdb theknife_db
+    createdb TheKnife
 
 2. Configurare le credenziali nel file:
     src/main/resources/restaurant_owners.properties
 
 Esempio di configurazione:
-    db.url=jdbc:postgresql://localhost:5432/theknife_db
+    db.url=jdbc:postgresql://localhost:6028/TheKnife
     db.username=postgres
-    db.password=your_password
+    db.password=andrea
     db.driver=org.postgresql.Driver
 
 ================================================================================
@@ -357,10 +357,10 @@ Il progetto utilizza il sistema dei moduli Java 9+ con:
 ================================================================================
 
 Per problemi tecnici o domande:
-- Andrea De Nisco: [email not provided]
-- Antonio De Nisco: [email not provided]
+- Andrea De Nisco: [adenisco@studenti.uninsubria.it]
+- Antonio De Nisco: [adenisco1@studenti.uninsubria.it]
 
-Repository: [URL not provided]
+Repository: [https://github.com/Sora24/TheKnife]
 Documentazione: doc/Manuale_Utente_TheKnife.html
 
 Versione README: 1.0
