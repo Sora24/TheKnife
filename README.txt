@@ -369,7 +369,7 @@ Repository: [https://github.com/Sora24/TheKnife]
 Documentazione: doc/Manuale_Utente_TheKnife.html
 
 Versione README: 1.0
-Data ultimo aggiornamento: Ottobre 2025
+Data ultimo aggiornamento: Novembre 2025
 
 ================================================================================
                                     FINE
