@@ -71,6 +71,11 @@ Esempio di configurazione:
     db.password=andrea
     db.driver=org.postgresql.Driver
 
+3. Caricare nel database il file csv da terminale:
+    \copy ristorantitheknife FROM '..\michelin_my_maps_pulito.csv' CSV HEADER DELIMITER ';' NULL ''
+    (Nei puntini ".." inserire la directory, o in questo caso "C:\Users\Desktop\de_nisco_752452\TheKnife\doc\File utilizzati per il progetto)
+    e quindi \copy ristorantitheknife FROM 'C:\Users\Desktop\de_nisco_752452\TheKnife\doc\File utilizzati per il progetto\michelin_my_maps_pulito.csv' CSV HEADER DELIMITER ';' NULL ''
+
 ================================================================================
                               LIBRERIE E DIPENDENZE
 ================================================================================
