@@ -20,10 +20,35 @@
         <configuration>
           <source>24</source>
           <target>24</target>
+          <showWarnings>true</showWarnings>
+          <showDeprecation>true</showDeprecation>
           <compilerArgs>
             <arg>--add-modules</arg>
             <arg>java.sql</arg>
+            <arg>-Xlint:all</arg>
+            <arg>-Xlint:-processing</arg>
           </compilerArgs>
+        </configuration>
+      </plugin>
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.12.0</version>
+        <configuration>
+          <source>24</source>
+          <target>24</target>
+          <encoding>UTF-8</encoding>
+          <docencoding>UTF-8</docencoding>
+          <charset>UTF-8</charset>
+          <locale>it</locale>
+          <windowTitle>TheKnife - Sistema Recensioni Ristoranti</windowTitle>
+          <doctitle>TheKnife API Documentation v2.0</doctitle>
+          <author>true</author>
+          <version>true</version>
+          <use>true</use>
+          <splitindex>true</splitindex>
+          <show>private</show>
+          <nohelp>true</nohelp>
+          <failOnError>false</failOnError>
         </configuration>
       </plugin>
     </plugins>
@@ -122,23 +147,9 @@
       </build>
     </profile>
   </profiles>
-  <dependencies>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-controls</artifactId>
-      <version>21</version>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.openjfx</groupId>
-      <artifactId>javafx-fxml</artifactId>
-      <version>21</version>
-      <scope>compile</scope>
-    </dependency>
-  </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <javafx.version>21</javafx.version>
+    <javafx.version>24.0.2</javafx.version>
     <maven.compiler.target>24</maven.compiler.target>
     <maven.compiler.source>24</maven.compiler.source>
   </properties>
