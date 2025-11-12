@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
  * Il server ascolta sulla porta 8080 e utilizza un pool di thread per gestire
  * connessioni client multiple concorrenti.
  * 
- * <h3>Protocollo di Comunicazione</h3>
+ * <h2>Protocollo di Comunicazione</h2>
  * Il server riconosce i seguenti tipi di richieste:
  * <ul>
  *   <li><strong>SEARCH_RESTAURANTS:</strong> Ricerca ristoranti con filtri</li>
@@ -36,16 +36,16 @@ import java.util.concurrent.Executors;
  *   <li><strong>ADD_RESTAURANT:</strong> Aggiunge un nuovo ristorante (solo gestori)</li>
  * </ul>
  * 
- * <h3>Architettura</h3>
+ * <h2>Architettura</h2>
  * <p>Il server utilizza:
  * <ul>
- *   <li><strong>Database PostgreSQL:</strong> Per persistenza dati (localhost:6028)</li>
+ *   <li><strong>Database PostgreSQL:</strong> Per persistenza dati (localhost:5432)</li>
  *   <li><strong>Pool di Thread:</strong> Per gestione concorrente dei client</li>
  *   <li><strong>Protocollo Testuale:</strong> Richieste/risposte in formato stringa</li>
  *   <li><strong>Crittografia Avanzata:</strong> SHA-256 con salt per nuove password, MD5 legacy supportato</li>
  * </ul>
  * 
- * <h3>Sicurezza</h3>
+ * <h2>Sicurezza</h2>
  * <p>Il server implementa:
  * <ul>
  *   <li>Password hashing SHA-256 con salt, mantenendo compatibilità MD5 legacy</li>
@@ -54,7 +54,7 @@ import java.util.concurrent.Executors;
  *   <li>Autenticazione basata su ruoli (utente/gestore)</li>
  * </ul>
  * 
- * <h3>Utilizzo</h3>
+ * <h2>Utilizzo</h2>
  * <pre>{@code
  * // Avvio del server
  * ServerService server = new ServerService();
@@ -608,8 +608,8 @@ public class ServerService {
      * @return {@code true} se le credenziali sono valide e l'utente può accedere,
      *         {@code false} se le credenziali sono invalide o l'utente non esiste
      * 
-     * @throws IllegalArgumentException se username o password sono null o vuoti
-     * @see #registerUser(String, String, String)
+    * @throws IllegalArgumentException se username o password sono null o vuoti
+    * @see #registerUser(String, String, String, String, String, String, String, String)
      * @since 1.0
      * @deprecated Implementazione placeholder - sostituire con logica di autenticazione reale
      */

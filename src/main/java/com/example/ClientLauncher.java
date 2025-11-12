@@ -7,7 +7,7 @@ package com.example;
  * del runtime JavaFX evitando conflitti con il sistema di moduli Java. Implementa
  * una strategia di avvio robusta con gestione degli errori e diagnostica automatica.
  * 
- * <h3>Problematiche Risolte</h3>
+ * <h2>Problematiche Risolte</h2>
  * <ul>
  *   <li><strong>Conflitti Moduli:</strong> Evita estensione diretta di Application</li>
  *   <li><strong>Runtime Missing:</strong> Diagnostica automatica componenti JavaFX mancanti</li>
@@ -15,7 +15,7 @@ package com.example;
  *   <li><strong>Error Reporting:</strong> Messaggi di errore utente-friendly</li>
  * </ul>
  * 
- * <h3>Requisiti Runtime</h3>
+ * <h2>Requisiti Runtime</h2>
  * <p>L'applicazione richiede:
  * <ul>
  *   <li>Java 21+ con moduli JavaFX (controls, fxml)</li>
@@ -23,7 +23,7 @@ package com.example;
  *   <li>Sistema operativo con supporto GUI (non headless)</li>
  * </ul>
  * 
- * <h3>Modalità di Avvio</h3>
+ * <h2>Modalità di Avvio</h2>
  * <pre>{@code
  * // Avvio diretto (se JavaFX è nel classpath)
  * java -jar TheKnife-client.jar

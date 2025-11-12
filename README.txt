@@ -54,7 +54,7 @@ Deve restituire Maven 3.6.0 o superiore.
 INSTALLAZIONE POSTGRESQL
 -------------------------
 1. Scaricare e installare PostgreSQL da: https://www.postgresql.org/download/
-2. Durante l'installazione, annotare username, password e porta (default 6028)
+2. Durante l'installazione, annotare username, password e porta (default 5432)
 3. Avviare il servizio PostgreSQL
 
 CONFIGURAZIONE DATABASE
@@ -66,7 +66,7 @@ CONFIGURAZIONE DATABASE
     src/main/resources/restaurant_owners.properties
 
 Esempio di configurazione:
-    db.url=jdbc:postgresql://localhost:6028/TheKnife
+    db.url=jdbc:postgresql://localhost:5432/TheKnife
     db.username=postgres
     db.password=andrea
     db.driver=org.postgresql.Driver

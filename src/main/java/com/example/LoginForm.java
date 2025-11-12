@@ -17,7 +17,7 @@ import java.security.NoSuchAlgorithmException;
  * per l'autenticazione tramite server. Supporta autenticazione sicura con password MD5
  * e gestione dei ruoli utente (guest, utente registrato, gestore ristorante).
  * 
- * <h3>Architettura Client-Server</h3>
+ * <h2>Architettura Client-Server</h2>
  * <p>Il login utilizza comunicazione TCP socket con il server per:
  * <ul>
  *   <li><strong>Autenticazione Sicura:</strong> Invio password MD5 hash (mai plaintext)</li>
@@ -26,7 +26,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Validazione Remota:</strong> Controllo credenziali centralizzato</li>
  * </ul>
  * 
- * <h3>Processo di Autenticazione</h3>
+ * <h2>Processo di Autenticazione</h2>
  * <ol>
  *   <li><strong>Validazione Client:</strong> Verifica username e password non vuoti</li>
  *   <li><strong>Hashing MD5:</strong> Converte password in hash MD5 prima dell'invio</li>
@@ -35,14 +35,14 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Navigazione:</strong> Apre {@link GuestPage} con dati utente</li>
  * </ol>
  * 
- * <h3>Gestione Ruoli Utente</h3>
+ * <h2>Gestione Ruoli Utente</h2>
  * <ul>
  *   <li><strong>Guest:</strong> Accesso limitato, solo visualizzazione</li>
  *   <li><strong>Utente:</strong> Può aggiungere recensioni, filtro per località</li>
  *   <li><strong>Gestore:</strong> Può creare/modificare ristoranti, rispondere recensioni</li>
  * </ul>
  * 
- * <h3>Sicurezza</h3>
+ * <h2>Sicurezza</h2>
  * <ul>
  *   <li><strong>Password Hashing:</strong> MD5 hash prima della trasmissione</li>
  *   <li><strong>Nessun Storage Locale:</strong> Password non memorizzate localmente</li>
@@ -50,7 +50,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Gestione Errori:</strong> Messaggi sicuri senza esposizione dettagli</li>
  * </ul>
  * 
- * <h3>Interfaccia Utente</h3>
+ * <h2>Interfaccia Utente</h2>
  * <p>Design pulito e intuitivo con:
  * <ul>
  *   <li>Campi di input con validazione real-time</li>
@@ -59,7 +59,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li>Messaggi di errore user-friendly</li>
  * </ul>
  * 
- * <h3>Pattern di Utilizzo</h3>
+ * <h2>Pattern di Utilizzo</h2>
  * <pre>{@code
  * // Avvio finestra di login
  * LoginForm loginForm = new LoginForm();
@@ -102,8 +102,8 @@ public class LoginForm extends Application {
      * @return Password criptata in formato esadecimale (32 caratteri)
      * @throws RuntimeException Se l'algoritmo MD5 non è disponibile nel sistema
      * 
-     * @implNote MD5 è utilizzato per compatibilità con il database esistente. 
-     *           Per nuove implementazioni si consiglia SHA-256 con VARCHAR(64).
+    * <p><b>Nota:</b> MD5 è utilizzato per compatibilità con il database esistente. Per nuove
+    * implementazioni si consiglia SHA-256 con VARCHAR(64).
      * @see java.security.MessageDigest
      */
     private String hashPassword(String password) {
@@ -225,8 +225,8 @@ public class LoginForm extends Application {
      *   <li>Alert ERROR con stack trace per errori database/sistema</li>
      * </ul>
      * 
-     * @implNote Il sistema garantisce backward compatibility con utenti esistenti
-     *           mentre migliora automaticamente la sicurezza delle password.
+    * <p><b>Nota:</b> Il sistema garantisce backward compatibility con utenti esistenti mentre
+    * migliora automaticamente la sicurezza delle password.
      */
     loginBtn.setOnAction(_ -> {
             String username = usernameField.getText().trim();

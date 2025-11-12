@@ -11,7 +11,7 @@ import java.util.Base64;
  * algoritmi crittografici robusti con salt per prevenire attacchi rainbow table.
  * Mantiene la compatibilità con il sistema legacy MD5 per la migrazione graduale.
  * 
- * <h3>Funzionalità Principali</h3>
+ * <h2>Funzionalità Principali</h2>
  * <ul>
  *   <li><strong>Salt Generation:</strong> Generazione sicura di salt casuali</li>
  *   <li><strong>SHA-256 Hashing:</strong> Algoritmo crittografico sicuro per nuove password</li>
@@ -19,7 +19,7 @@ import java.util.Base64;
  *   <li><strong>Password Verification:</strong> Verifica sicura delle password hashate</li>
  * </ul>
  * 
- * <h3>Formato Password Salted</h3>
+ * <h2>Formato Password Salted</h2>
  * <p>Le password hashate con salt vengono memorizzate nel formato:
  * <pre>{@code
  * $SALT${base64-encoded-salt}${sha256-hash}
@@ -28,7 +28,7 @@ import java.util.Base64;
  * $SALT$dGVzdHNhbHQ=$5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8
  * }</pre>
  * 
- * <h3>Compatibilità</h3>
+ * <h2>Compatibilità</h2>
  * <ul>
  *   <li><strong>Password Legacy MD5:</strong> 32 caratteri esadecimali (supportate)</li>
  *   <li><strong>Password Plain Text:</strong> Testo in chiaro (supportate con upgrade automatico)</li>

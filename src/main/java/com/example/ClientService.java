@@ -17,7 +17,7 @@ import java.math.BigDecimal;
  * per tutte le operazioni client-server, inclusa la gestione di ristoranti, recensioni
  * e autenticazione utenti. Il client comunica con il server tramite socket TCP sulla porta 8080.
  * 
- * <h3>Funzionalità Principali</h3>
+ * <h2>Funzionalità Principali</h2>
  * <ul>
  *   <li><strong>Ricerca Ristoranti:</strong> Filtri avanzati per nazione, città, cucina, prezzo</li>
  *   <li><strong>Gestione Recensioni:</strong> Visualizzazione e aggiunta recensioni utenti</li>
@@ -26,7 +26,7 @@ import java.math.BigDecimal;
  *   <li><strong>Caching Locale:</strong> Cache delle valutazioni e conteggi recensioni</li>
  * </ul>
  * 
- * <h3>Protocollo di Comunicazione</h3>
+ * <h2>Protocollo di Comunicazione</h2>
  * <p>Il client invia richieste in formato testuale strutturato:
  * <ul>
  *   <li><code>SEARCH_RESTAURANTS:nazione|città|cucina|prezzo|delivery|online</code></li>
@@ -37,7 +37,7 @@ import java.math.BigDecimal;
  *   <li><code>ADD_RESTAURANT:nome|nazione|città|indirizzo|prezzo|delivery|online|cucina|owner</code></li>
  * </ul>
  * 
- * <h3>Gestione Errori</h3>
+ * <h2>Gestione Errori</h2>
  * <p>Il servizio gestisce automaticamente:
  * <ul>
  *   <li>Errori di connessione TCP con messaggi utente-friendly</li>
@@ -46,7 +46,7 @@ import java.math.BigDecimal;
  *   <li>Fallback per operazioni non riuscite</li>
  * </ul>
  * 
- * <h3>Pattern di Utilizzo</h3>
+ * <h2>Pattern di Utilizzo</h2>
  * <pre>{@code
  * // Ottenimento istanza singleton
  * ClientService client = ClientService.getInstance();
@@ -61,7 +61,7 @@ import java.math.BigDecimal;
  * boolean success = client.aggiungiRecensione("user", "ristorante", 5, "Ottimo!");
  * }</pre>
  * 
- * <h3>Thread Safety</h3>
+ * <h2>Thread Safety</h2>
  * <p>La classe è thread-safe per l'istanza singleton, ma ogni operazione di rete
  * utilizza connessioni socket separate per evitare conflitti concorrenti.
  * 

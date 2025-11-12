@@ -28,7 +28,7 @@ import java.util.stream.Collectors;
  * e recensioni. L'interfaccia si adatta automaticamente al ruolo dell'utente (guest, utente, gestore)
  * mostrando le funzionalità appropriate.
  * 
- * <h3>Funzionalità per Utenti Guest</h3>
+ * <h2>Funzionalità per Utenti Guest</h2>
  * <ul>
  *   <li>Ricerca ristoranti con filtri avanzati (nazione, città, cucina, prezzo)</li>
  *   <li>Visualizzazione dettagli ristoranti con valutazioni medie</li>
@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
  *   <li>Navigazione paginata dei risultati</li>
  * </ul>
  * 
- * <h3>Funzionalità per Utenti Registrati</h3>
+ * <h2>Funzionalità per Utenti Registrati</h2>
  * <ul>
  *   <li>Tutte le funzionalità guest</li>
  *   <li>Aggiunta recensioni personali con valutazione 1-5 stelle</li>
@@ -44,7 +44,7 @@ import java.util.stream.Collectors;
  *   <li>Profilo utente personalizzato</li>
  * </ul>
  * 
- * <h3>Funzionalità per Gestori Ristoranti</h3>
+ * <h2>Funzionalità per Gestori Ristoranti</h2>
  * <ul>
  *   <li>Tutte le funzionalità utente registrato</li>
  *   <li>Creazione e gestione ristoranti propri</li>
@@ -53,7 +53,7 @@ import java.util.stream.Collectors;
  *   <li>Visualizzazione statistiche ristorante (media stelle, numero recensioni)</li>
  * </ul>
  * 
- * <h3>Architettura Client-Server</h3>
+ * <h2>Architettura Client-Server</h2>
  * <p>L'interfaccia utilizza {@link ClientService} per tutte le operazioni di rete:
  * <ul>
  *   <li><strong>Ricerca Asincrona:</strong> Ricerca ristoranti senza bloccare UI</li>
@@ -62,7 +62,7 @@ import java.util.stream.Collectors;
  *   <li><strong>Gestione Errori:</strong> Feedback utente per errori di rete</li>
  * </ul>
  * 
- * <h3>Interfaccia Utente</h3>
+ * <h2>Interfaccia Utente</h2>
  * <p>Design responsivo con:
  * <ul>
  *   <li><strong>Tabella Principale:</strong> Lista ristoranti con sorting e paginazione</li>
@@ -72,7 +72,7 @@ import java.util.stream.Collectors;
  *   <li><strong>Navigazione Breadcrumb:</strong> Per tornare al login/registrazione</li>
  * </ul>
  * 
- * <h3>Gestione Dati</h3>
+ * <h2>Gestione Dati</h2>
  * <p>La classe gestisce:
  * <ul>
  *   <li>Paginazione intelligente con opzioni flessibili (20, 50, 100, Tutti)</li>
@@ -81,7 +81,7 @@ import java.util.stream.Collectors;
  *   <li>Persistenza ownership ristoranti in file properties</li>
  * </ul>
  * 
- * <h3>Pattern di Utilizzo</h3>
+ * <h2>Pattern di Utilizzo</h2>
  * <pre>{@code
  * // Creazione per utente guest anonimo
  * GuestPage guestPage = new GuestPage();
@@ -1103,7 +1103,7 @@ public class GuestPage extends Application {
     /**
      * Mostra la finestra di dialogo con tutte le recensioni di un ristorante.
      * @param ristorante Ristorante selezionato
-     * @throws SQLException Eccezione SQL
+    * 
      */
     private void openReviewDialog(Ristorante ristorante) {
     Stage dialog = new Stage();

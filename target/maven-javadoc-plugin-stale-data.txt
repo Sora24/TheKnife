@@ -1,0 +1,54 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+@argfile
+--no-fonts
+-locale
+'it'
+--class-path
+'C:/Users/denis/.m2/repository/org/openjfx/javafx-controls/24.0.2/javafx-controls-24.0.2.jar;C:/Users/denis/.m2/repository/org/openjfx/javafx-graphics/24.0.2/javafx-graphics-24.0.2.jar;C:/Users/denis/.m2/repository/org/openjfx/javafx-base/24.0.2/javafx-base-24.0.2.jar;C:/Users/denis/.m2/repository/org/openjfx/javafx-fxml/24.0.2/javafx-fxml-24.0.2.jar;C:/Users/denis/.m2/repository/org/postgresql/postgresql/42.7.8/postgresql-42.7.8.jar'
+--module-path
+'C:/Users/denis/Documents/GitHub/TheKnife/target/classes;C:/Users/denis/.m2/repository/org/openjfx/javafx-graphics/24.0.2/javafx-graphics-24.0.2-win.jar;C:/Users/denis/.m2/repository/org/openjfx/javafx-fxml/24.0.2/javafx-fxml-24.0.2-win.jar;C:/Users/denis/.m2/repository/org/openjfx/javafx-controls/24.0.2/javafx-controls-24.0.2-win.jar;C:/Users/denis/.m2/repository/org/openjfx/javafx-base/24.0.2/javafx-base-24.0.2-win.jar'
+--patch-module
+com.example='C:/Users/denis/Documents/GitHub/TheKnife/src/main/java'
+-encoding
+'UTF-8'
+-private
+-source
+'24'
+--module-source-path
+'C:/Users/denis/Documents/GitHub/TheKnife/target/reports/apidocs/src'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/denis/Documents/GitHub/TheKnife/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'TheKnife API Documentation v2.0'
+-nohelp
+-splitindex
+-use
+-version
+-windowtitle
+'TheKnife 1.0-SNAPSHOT API'
+com.example
+'C:/Users/denis/Documents/GitHub/TheKnife/src/main/java/module-info.java'
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\allclasses-index.html = 1762957980147
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\allpackages-index.html = 1762957980149
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\constant-values.html = 1762957980067
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\deprecated-list.html = 1762957980133
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\element-list = 1762957979968
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\index.html = 1762957980213
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\javadoc.bat = 1762957938152
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\member-search-index.js = 1762957980152
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\module-search-index.js = 1762957980150
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\overview-tree.html = 1762957980130
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\package-search-index.js = 1762957980150
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\search.html = 1762957980211
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\tag-search-index.js = 1762957980153
+C:\Users\denis\Documents\GitHub\TheKnife\target\reports\apidocs\type-search-index.js = 1762957980151

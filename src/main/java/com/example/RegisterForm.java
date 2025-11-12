@@ -16,7 +16,7 @@ import java.security.NoSuchAlgorithmException;
  * per creare nuovi account utente tramite server. Fornisce un'interfaccia completa per la raccolta
  * dei dati utente con validazione, crittografia password e gestione ruoli.
  * 
- * <h3>Architettura Client-Server</h3>
+ * <h2>Architettura Client-Server</h2>
  * <p>La registrazione utilizza comunicazione TCP socket per:
  * <ul>
  *   <li><strong>Registrazione Sicura:</strong> Invio dati con password MD5 hash</li>
@@ -25,7 +25,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Feedback Immediato:</strong> Risposta successo/errore dal server</li>
  * </ul>
  * 
- * <h3>Campi di Registrazione</h3>
+ * <h2>Campi di Registrazione</h2>
  * <p>Il form raccoglie le seguenti informazioni:
  * <ul>
  *   <li><strong>Dati Personali:</strong> Nome, Cognome, Data di Nascita</li>
@@ -34,7 +34,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Ruolo:</strong> Utente standard o Gestore ristorante</li>
  * </ul>
  * 
- * <h3>Validazione e Sicurezza</h3>
+ * <h2>Validazione e Sicurezza</h2>
  * <ul>
  *   <li><strong>Validazione Client:</strong> Controlli real-time campi obbligatori</li>
  *   <li><strong>Conferma Password:</strong> Verifica matching password/conferma</li>
@@ -43,14 +43,14 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Sanitizzazione Input:</strong> Prevenzione injection attacks</li>
  * </ul>
  * 
- * <h3>Gestione Ruoli</h3>
+ * <h2>Gestione Ruoli</h2>
  * <p>Durante la registrazione l'utente può scegliere:
  * <ul>
  *   <li><strong>Utente:</strong> Può cercare ristoranti, leggere/scrivere recensioni</li>
  *   <li><strong>Gestore:</strong> Tutte le funzionalità utente + gestione ristoranti</li>
  * </ul>
  * 
- * <h3>Processo di Registrazione</h3>
+ * <h2>Processo di Registrazione</h2>
  * <ol>
  *   <li><strong>Compilazione Form:</strong> Utente inserisce tutti i dati richiesti</li>
  *   <li><strong>Validazione Client:</strong> Controlli sintassi e campi obbligatori</li>
@@ -60,7 +60,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li><strong>Navigazione:</strong> Su successo, apre {@link GuestPage} con login automatico</li>
  * </ol>
  * 
- * <h3>Interfaccia Utente</h3>
+ * <h2>Interfaccia Utente</h2>
  * <p>Design intuitivo con:
  * <ul>
  *   <li>Layout GridPane organizzato e accessibile</li>
@@ -69,7 +69,7 @@ import java.security.NoSuchAlgorithmException;
  *   <li>Pulsanti chiari per registrazione e ritorno login</li>
  * </ul>
  * 
- * <h3>Pattern di Utilizzo</h3>
+ * <h2>Pattern di Utilizzo</h2>
  * <pre>{@code
  * // Avvio finestra di registrazione
  * RegisterForm registerForm = new RegisterForm();

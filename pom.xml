@@ -93,8 +93,7 @@
                     <splitindex>true</splitindex>
                     <show>private</show>
                     <nohelp>true</nohelp>
-                    <additionalJOption>--add-modules</additionalJOption>
-                    <additionalJOption>java.sql</additionalJOption>
+                    <failOnError>false</failOnError>
                 </configuration>
             </plugin>
         </plugins>

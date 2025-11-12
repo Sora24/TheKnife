@@ -18,7 +18,7 @@ import java.sql.SQLException;
  * <p>
  * <strong>Configurazione Database:</strong>
  * <ul>
- *   <li>Server: localhost:6028</li>
+ *   <li>Server: localhost:5432</li>
  *   <li>Database: TheKnife</li>
  *   <li>Driver: PostgreSQL JDBC</li>
  * </ul>
@@ -38,7 +38,7 @@ public class DBConnection {
     /**
      * URL di connessione al database PostgreSQL.
      */
-    private static String URL = "jdbc:postgresql://localhost:6028/TheKnife"; 
+    private static String URL = "jdbc:postgresql://localhost:5432/TheKnife"; 
     /**
      * Username per la connessione al database.
      */
@@ -69,7 +69,7 @@ public class DBConnection {
     /**
      * Restituisce una connessione al database PostgreSQL.
      * @return Connection oggetto di connessione
-     * @throws SQLException se la connessione fallisce
+    * @throws java.sql.SQLException se la connessione fallisce
      */
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
