@@ -71,7 +71,53 @@ Esempio di configurazione:
     db.password=andrea
     db.driver=org.postgresql.Driver
 
-3. Caricare nel database il file csv da terminale:
+3. Creare le quattro tabelle per il buon funzionamento del DB:
+    
+CREATE TABLE RistorantiTheKnife (
+    "Nome" varchar(100) NOT NULL,
+    "Nazione" varchar(100),
+    "Citta" varchar(100) NOT NULL,
+    "Indirizzo" varchar(200) NOT NULL,
+    "Latitudine" varchar(100),
+    "Longitudine" varchar(100),
+    "Fascia_di_prezzo" numeric,
+    "Delivery" varchar(100),
+    "Online" varchar(100),
+    "Tipo_di_cucina" varchar(100),
+    PRIMARY KEY ("Nome", "Citta", "Indirizzo")
+);
+
+CREATE TABLE Utenti (
+    "Nome" varchar(50) NOT NULL,
+    "Cognome" varchar(50) NOT NULL,
+    "Username" varchar(50) PRIMARY KEY,
+    "Email" varchar(50) NOT NULL,
+    "Password" varchar(50) NOT NULL,
+    "Data_di_nascita" text,				
+    "Luogo_del_domicilio" text NOT NULL,		
+    "Ruolo" varchar(10) NOT NULL			
+);
+
+CREATE TABLE Recensioni (
+
+    "Data" varchar(50) NOT NULL, 
+    "Stelle" numeric NOT NULL, 
+    "Ora" varchar(50) NOT NULL,    
+    "Username_scittore" varchar(50) NOT NULL, 
+    "Ristorante_scritto" varchar(100) NOT NULL, 
+    "Testo" text, 
+    "Risposta_gestore" text 
+);
+
+CREATE TABLE Preferiti (
+    "Username" varchar(50) NOT NULL,
+    "Nome_ristorante" varchar(100) NOT NULL,
+    "Citta_ristorante" varchar(100) NOT NULL,
+    "Indirizzo_ristorante" varchar(200) NOT NULL,
+    PRIMARY KEY ("Username", "Nome_ristorante", "Citta_ristorante", "Indirizzo_ristorante")
+);
+
+4. Caricare nel database il file csv da terminale:
     \copy ristorantitheknife FROM '..\michelin_my_maps_pulito.csv' CSV HEADER DELIMITER ';' NULL ''
     (Nei puntini ".." inserire la directory, o in questo caso "C:\Users\Desktop\de_nisco_752452\TheKnife\doc\File utilizzati per il progetto)
     e quindi \copy ristorantitheknife FROM 'C:\Users\Desktop\de_nisco_752452\TheKnife\doc\File utilizzati per il progetto\michelin_my_maps_pulito.csv' CSV HEADER DELIMITER ';' NULL ''
