@@ -3,6 +3,8 @@ package com.example;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.io.InputStream;
+import java.util.Properties;
 
 /**
  * Classe di utilità per la gestione centralizzata delle connessioni al database PostgreSQL.
@@ -17,18 +19,23 @@ import java.sql.SQLException;
  * passano attraverso questa classe per garantire configurazione consistente.
  * <p>
  * <strong>Configurazione Database:</strong>
+ * <p>
+ * Le credenziali sono lette dinamicamente dal file <code>application.properties</code>
+ * presente in classpath. Non sono hardcoded nel codice, permettendo una configurazione
+ * flessibile senza ricompilazione:
  * <ul>
- *   <li>Server: localhost:5432</li>
- *   <li>Database: TheKnife</li>
- *   <li>Driver: PostgreSQL JDBC</li>
+ *   <li><code>db.url</code> - URL JDBC del database</li>
+ *   <li><code>db.user</code> - Username per l'accesso</li>
+ *   <li><code>db.password</code> - Password per l'accesso</li>
  * </ul>
  * <p>
- * <strong>Sicurezza:</strong> Le credenziali sono hardcoded per semplicità in questo
- * progetto educativo. In un ambiente di produzione dovrebbero essere esternalizzate
- * in file di configurazione o variabili d'ambiente.
+ * <strong>Sicurezza:</strong> Il file <code>application.properties</code> deve essere
+ * protetto e non condiviso pubblicamente poiché contiene credenziali del database.
+ * In ambienti di produzione, utilizzare variabili d'ambiente o sistemi di gestione
+ * dei segreti dedicati.
  * 
  * @author Andrea De Nisco, Antonio De Nisco
- * @version 2.0 - Ottimizzato per architettura client-server
+ * @version 2.1 - Configurazione dinamica da file properties
  * @since 1.0
  * @see ServerService
  * @see RistoranteDAO
@@ -38,15 +45,58 @@ public class DBConnection {
     /**
      * URL di connessione al database PostgreSQL.
      */
-    private static String URL = "jdbc:postgresql://localhost:5432/TheKnife"; 
+    private static String URL;
     /**
      * Username per la connessione al database.
      */
-    private static String USER = "postgres"; 
+    private static String USER;
     /**
      * Password per la connessione al database.
      */
-    private static String PASSWORD = "andrea"; 
+    private static String PASSWORD;
+
+    /**
+     * Blocco di inizializzazione statica: carica la configurazione dal file
+     * application.properties al caricamento della classe.
+     */
+    static {
+        try {
+            Properties properties = new Properties();
+            
+            // Carica il file application.properties da classpath
+            try (InputStream input = DBConnection.class.getClassLoader()
+                    .getResourceAsStream("application.properties")) {
+                
+                if (input == null) {
+                    System.err.println("ERRORE: File application.properties non trovato in classpath!");
+                    System.err.println("Assicurati che il file sia in src/main/resources/");
+                    // Valori di fallback per evitare NullPointerException
+                    URL = "jdbc:postgresql://localhost:5432/TheKnife";
+                    USER = "postgres";
+                    PASSWORD = "andrea";
+                } else {
+                    properties.load(input);
+                    
+                    // Leggi i valori dal file con fallback a valori di default
+                    URL = properties.getProperty("db.url", "jdbc:postgresql://localhost:5432/TheKnife");
+                    USER = properties.getProperty("db.user", "postgres");
+                    PASSWORD = properties.getProperty("db.password", "andrea");
+                    
+                    System.out.println("✓ Configurazione database caricata da application.properties");
+                    System.out.println("  URL: " + URL);
+                    System.out.println("  Utente: " + USER);
+                }
+            }
+        } catch (Exception e) {
+            System.err.println("ERRORE nel caricamento della configurazione: " + e.getMessage());
+            e.printStackTrace();
+            
+            // Valori di fallback in caso di errore
+            URL = "jdbc:postgresql://localhost:5432/TheKnife";
+            USER = "postgres";
+            PASSWORD = "andrea";
+        }
+    } 
 
     /**
      * Costruttore di default.
